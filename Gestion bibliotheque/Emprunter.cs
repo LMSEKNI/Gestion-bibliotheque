@@ -30,15 +30,15 @@ namespace Gestion_bibliotheque
             var connection = new MySqlConnection(connString);
             try
             {
-                this.res.Visible = false;
+                connection.Open();
+
                 this.empr.Visible = false;
                 string id = id_txt.Text;
                 string cin = cin_txt.Text;
-                connection.Open();
-                string query = "INSERT INTO emprunter (CIN, id_Livres, Date_empr) VALUES (@cin, @id,CURDATE())";
                 
-                MySqlCommand command = new MySqlCommand(query, connection);
-                
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO emprunter (CIN, id_Livres, Date_empr) VALUES (@cin, @id,CURDATE());UPDATE livres SET Quantite disponible = Quantite disponible - 1 WHERE id_livres = @id";
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@cin", cin);
                 command.ExecuteNonQuery();
@@ -60,6 +60,11 @@ namespace Gestion_bibliotheque
             }
 
 
+        }
+
+        private void Emprunter_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

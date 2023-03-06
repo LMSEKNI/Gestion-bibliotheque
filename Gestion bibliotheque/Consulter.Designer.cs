@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulter));
             this.Affichage = new System.Windows.Forms.DataGridView();
-            this.lister = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantite_Disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lister = new System.Windows.Forms.Button();
             this.rechercher = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Affichage)).BeginInit();
             this.SuspendLayout();
@@ -61,16 +61,6 @@
             this.Affichage.Size = new System.Drawing.Size(820, 357);
             this.Affichage.TabIndex = 0;
             this.Affichage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // lister
-            // 
-            this.lister.Location = new System.Drawing.Point(967, 441);
-            this.lister.Name = "lister";
-            this.lister.Size = new System.Drawing.Size(105, 44);
-            this.lister.TabIndex = 1;
-            this.lister.Text = "Lister livres";
-            this.lister.UseVisualStyleBackColor = true;
-            this.lister.Click += new System.EventHandler(this.button1_Click);
             // 
             // ID
             // 
@@ -108,6 +98,16 @@
             this.Quantite_Disponible.MinimumWidth = 6;
             this.Quantite_Disponible.Name = "Quantite_Disponible";
             // 
+            // lister
+            // 
+            this.lister.Location = new System.Drawing.Point(967, 441);
+            this.lister.Name = "lister";
+            this.lister.Size = new System.Drawing.Size(105, 44);
+            this.lister.TabIndex = 1;
+            this.lister.Text = "Lister livres";
+            this.lister.UseVisualStyleBackColor = true;
+            this.lister.Click += new System.EventHandler(this.button1_Click);
+            // 
             // rechercher
             // 
             this.rechercher.Location = new System.Drawing.Point(804, 441);
@@ -127,6 +127,7 @@
             this.Controls.Add(this.rechercher);
             this.Controls.Add(this.lister);
             this.Controls.Add(this.Affichage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Consulter";
             this.Text = "Consulter";
             ((System.ComponentModel.ISupportInitialize)(this.Affichage)).EndInit();

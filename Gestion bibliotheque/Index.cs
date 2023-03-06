@@ -19,11 +19,16 @@ namespace Gestion_bibliotheque
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Emprunter empr = new Emprunter();
+            this.Hide();
+            empr.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Rendre rend = new Rendre();
+            this.Hide();
+            rend.ShowDialog();
 
         }
 

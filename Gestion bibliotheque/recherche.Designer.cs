@@ -135,6 +135,7 @@
             this.res.Size = new System.Drawing.Size(593, 211);
             this.res.TabIndex = 2;
             this.res.Visible = false;
+            this.res.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.res_CellContentClick);
             // 
             // ID
             // 
@@ -174,7 +175,7 @@
             // 
             // empr
             // 
-            this.empr.Location = new System.Drawing.Point(776, 252);
+            this.empr.Location = new System.Drawing.Point(813, 238);
             this.empr.Name = "empr";
             this.empr.Size = new System.Drawing.Size(164, 57);
             this.empr.TabIndex = 3;
@@ -188,10 +189,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1040, 554);
             this.Controls.Add(this.empr);
             this.Controls.Add(this.res);
             this.Controls.Add(this.rech);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "recherche";
             this.Text = "recherche";
             this.rech.ResumeLayout(false);

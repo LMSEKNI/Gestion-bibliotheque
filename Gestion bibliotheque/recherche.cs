@@ -91,5 +91,10 @@ namespace Gestion_bibliotheque
             this.Hide();
             empr.ShowDialog();
         }
+
+        private void res_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

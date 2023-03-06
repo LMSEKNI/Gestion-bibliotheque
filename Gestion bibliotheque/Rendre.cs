@@ -28,15 +28,13 @@ namespace Gestion_bibliotheque
                 string id = idrend_txt.Text;
                 string cin = cinrend_txt.Text;
                 connection.Open();
-                string query = "DELETE FROM emprunter WHERE id_livres =@id AND CIN =@cin";
-                string query1 = "UPDATE livres SET Quantite disponible = Quantite disponible + 1 WHERE id_livres = @id";
+                string query = "DELETE FROM emprunter WHERE id_livres = @id AND CIN = @cin"+
+                "UPDATE livres SET Quantite disponible = Quantite disponible + 1 WHERE id_livres = @id";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                MySqlCommand command1 = new MySqlCommand(query1, connection);
+                
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@cin", cin);
-                command1.Parameters.AddWithValue("@id", id);
-                command1.ExecuteNonQuery();
                 command.ExecuteNonQuery();
                 MessageBox.Show("Livre rendu!");
 
@@ -57,5 +55,5 @@ namespace Gestion_bibliotheque
 
         }
     }
-    }
+    
 }
